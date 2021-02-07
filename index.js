@@ -1,6 +1,7 @@
 // design pattern 
 // Single Responsibility Principle
-console.log('script works successfully');
+// console.log('script works successfully');
+import logMessage from './logger.js';
 class CalorieTracker{
     constructor(maxCalories){
        this.maxCalories=maxCalories;
@@ -9,19 +10,18 @@ class CalorieTracker{
 
 
     trackCalories(calorieCount) {
-        this.currentCaloreis +=calorieCount;
+        this.currentCaloreis += calorieCount;
         if(this.currentCaloreis>this.maxCalories){
-            this.logCalorieSurPlus();
+            logMessage('Too much clories ');
         }
     }
 
-    logCalorieSurPlus(){
-        console.log('Calories succeeded max Calories');
-    }
+    
 
 }
+console.log('script is ok');
 
 const calorieTracker = new CalorieTracker(400);
 calorieTracker.trackCalories(200);
 calorieTracker.trackCalories(100);
-calorieTracker.trackCalories(200);
+// calorieTracker.trackCalories(200);
